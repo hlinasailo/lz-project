@@ -1,0 +1,421 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #34495f;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar container */
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  min-height: 90px;
+
+  padding: 30px 60px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  /* Background image */
+  background-image: url("kj.jpg");
+  background-size: contain;        /* KEY: cover full navbar */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay for readability */
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+/* Ensure content is above overlay */
+.navbar * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo + Title */
+.logo-title {
+  display: flex;
+  align-items: center;
+  color: rgb(13, 13, 14);
+  
+}
+
+/* OPTIONAL: remove image if using background only */
+.logo-title img {
+  display: none;
+}
+
+/* Navigation Links */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin-left: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #ffcc00;
+}
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+    min-height: 65px;
+    background-position: center top;
+  }
+
+  .navbar ul {
+    gap: 12px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+  }
+}
+/* Hero Section */
+.hero {
+  background-image: url('backg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 60vh;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.hero-thu {
+  background-color: #f2f2f2;
+  width: 100vw;
+  height: auto;
+  text-align: center;
+  padding: 20px 20px;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.logo-titlee {
+  display: flex;
+  align-items: center;
+  color: rgb(17, 17, 18);
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.logo-titlee img {
+  height: 80px;
+  margin-right: 10px;
+}
+
+.logo-titlee h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.hero-thu p {
+  text-align: center;
+  color: #121212;
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+.view-work-btn {
+  display: block;
+  width: 98%;              /* almost full width */
+  max-width: 1200px;       /* prevents being too large on big screens */
+  margin: 30px auto;       /* center horizontally */
+  padding: 22px 0;
+  background-color: #34495f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+
+
+.view-work-btn:hover {
+  background-color: rgb(199, 157, 238);
+  color: #fff;
+}
+
+.hero-comic {
+  background-color: rgb(22, 22, 22);
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.hero-comic h2 {
+  display: flex;
+  align-items: center;
+  color: rgb(199, 157, 238);
+  justify-content: center;
+  text-align: center;
+  font-size: 40px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 60vh;
+  width: 100%;
+}
+
+/* Left side */
+.contact-section {
+  padding: 40px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-section h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(33, 33, 34);
+  margin-bottom: 15px;
+}
+
+.contact-section p {
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.icons a {
+  font-size: 22px;
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.icons a:hover {
+  color: #f44336;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #f9b208;
+}
+
+button {
+  background: #000;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #861c67;
+}
+
+/* Right side with image */
+.image-section {
+  background: url('chas.png') no-repeat center center/cover;
+}
+
+/* Footer */
+footer {
+  background: #34495f;
+  color: #050505;
+  text-align: center;
+  padding: 20px 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+footer h2 {
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 24px;
+  margin: 0 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #f9b208;
+}
+
+.year {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #080808;
+}
+
+.social-icons {
+  padding-bottom: 30px;
+}
+
+/* 🔹 Responsive: For small screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar li {
+    margin: 10px 0;
+  }
+
+  .navbar a {
+    font-size: 18px;
+  }
+
+  .hero-thu {
+    padding: 30px 15px;
+  }
+  
+  .logo-titlee img {
+    height: 60px;
+  }
+  
+  .logo-titlee h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-thu p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .view-work-btn {
+    width: 80%;
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+  
+  .image-section {
+    display: none;
+  }
+
+  .contact-section {
+    padding: 30px 20px;
+  }
+
+  footer {
+    padding: 15px 10px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 15px;
+  }
+  
+  .year {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-titlee h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-thu p {
+    font-size: 0.9rem;
+  }
+  
+  .view-work-btn {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+}
+footer {
+  color: white;
+}
+
+footer h4,
+footer .year {
+  color: white;
+}

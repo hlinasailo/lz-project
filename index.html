@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Department of Social Sciences and Languages</title>
+  <script src="https://kit.fontawesome.com/4e58b4c2ef.js" crossorigin="anonymous"></script>
+  <!-- EmailJS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS with your public key
+    (function() {
+      emailjs.init("xJ_veldAFmcsbVNio"); 
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- PAGE WRAPPER START -->
+  <div class="page-wrapper">
+
+    <nav class="navbar">
+      <div class="logo-title">
+        <img src="kj.jpg" alt="Logo">
+        <h1></h1>
+      </div>
+    </nav>
+
+    <div class="hero-thu">
+      <div class="logo-titlee">
+        
+        <h3>Department of Social Sciences and Languages</h3>
+      </div>
+      <p>"From Hills to Valleys, We Stand United."</p>
+    </div>
+
+    <div class="hero"></div>
+
+    <div class="hero-thu">
+      <div class="logo-titlee">
+        <h2>All Academic Years (I, II & III)</h2>
+      </div>
+
+      <a href="1year.html" class="view-work-btn">1st year (2025-2028)</a>
+      <a href="2year.html" class="view-work-btn">2nd year (2024-2027)</a>
+      <a href="3.1year.html" class="view-work-btn">3rd year (2023-2026): History Core</a>
+      <a href="3.2year.html" class="view-work-btn">3rd year (2023-2026): Sociology Core</a>
+      <a href="3.3year.html" class="view-work-btn">3rd year (2023-2026): Political Science Core</a>
+
+      <h3>All Groups</h3>
+      <a href="all.html" class="view-work-btn">All years Group</a>
+
+      <h4>Confession</h4>
+      <a href="conf.html" class="view-work-btn">Confession</a>
+    </div>
+
+    <div class="container">
+      <div class="contact-section">
+        <h1>CONTACT</h1>
+
+        <form id="contactForm" onsubmit="sendMail(event)">
+          <div>
+            <label>Name *</label>
+            <input type="text" name="name" placeholder="Enter your name" required>
+          </div>
+
+          <div>
+            <label>Email *</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+          </div>
+
+          <div>
+            <label>Subject</label>
+            <input type="text" name="subject" placeholder="Type the subject">
+          </div>
+
+          <div>
+            <label>Message</label>
+            <textarea name="message" rows="5" placeholder="Type your message here..."></textarea>
+          </div>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <div class="image-section"></div>
+    </div>
+
+  </div>
+  <!-- PAGE WRAPPER END -->
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo-titlee">
+      <img src="L.png" alt="Logo">
+      
+    </div>
+    <div class="year">
+      &copy; <span id="year"></span> All Rights Reserved
+    </div>
+  </footer>
+
+</body>
+
+</html>

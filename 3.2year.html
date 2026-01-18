@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> • 3 Year(Sociology)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --primary: #7c5cff;
+      --primary-dark: #6a4bff;
+      --secondary: #ffcc00;
+      --dark-bg: #0a0a0a;
+      --card-bg: #1a1a1a;
+      --text: #ffffff;
+      --text-light: #b0b0b0;
+      --border: #333333;
+      --shadow: rgba(0, 0, 0, 0.4);
+      --success: #4CAF50;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      background: var(--dark-bg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      padding: 20px 5%;
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-title img {
+      height: 40px;
+      width: 40px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 2px solid var(--primary);
+    }
+
+    .logo-title h1 {
+      font-size: 22px;
+      background: linear-gradient(90deg, #7c5cff, #ffcc00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .navbar a:hover, .navbar a.active {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Main Title */
+    .main-title {
+      text-align: center;
+      padding: 30px 20px;
+      position: relative;
+    }
+
+    .main-title h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #7c5cff, #ffcc00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    .main-title p {
+      color: var(--text-light);
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px 5%;
+      margin-bottom: 140px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 8px 25px var(--shadow);
+      border: 1px solid var(--border);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px var(--shadow);
+      border-color: var(--primary);
+    }
+
+    /* Smaller image containers */
+    .card-img-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1/1; /* Square images */
+      overflow: hidden;
+      max-height: 280px; /* Reduced maximum height */
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .card-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+      padding: 15px;
+      transform: translateY(10px);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover .card-overlay {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-content p {
+      color: var(--text-light);
+      font-size: 13px;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-date {
+      color: var(--primary);
+      font-size: 11px;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Modal */
+    #imageModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 2000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    #imageModal.show {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+    }
+
+    .modal-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+      animation: zoomIn 0.3s ease;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    #modalImg {
+      max-width: 100%;
+      max-height: 70vh; /* Smaller modal image */
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .modal-info {
+      position: absolute;
+      bottom: -70px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: white;
+    }
+
+    .modal-info h3 {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .modal-info p {
+      color: #ccc;
+      font-size: 13px;
+    }
+
+    #closeModal {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      background: rgba(0,0,0,0.5);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      border: none;
+    }
+
+    #closeModal:hover {
+      background: rgba(255,255,255,0.1);
+      transform: rotate(90deg);
+    }
+
+    /* Upload Form */
+    .upload-fixed {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(26, 26, 26, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 16px 5%;
+      border-top: 1px solid var(--border);
+      z-index: 1000;
+      box-shadow: 0 -5px 30px rgba(0,0,0,0.3);
+    }
+
+    .upload-fixed form {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .upload-fixed input,
+    .upload-fixed textarea {
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 14px;
+      flex: 1;
+      min-width: 120px;
+      transition: all 0.3s ease;
+    }
+
+    .upload-fixed input:focus,
+    .upload-fixed textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.2);
+    }
+
+    .upload-fixed textarea {
+      resize: none;
+      height: 44px;
+      min-height: 44px;
+    }
+
+    .upload-fixed button {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .upload-fixed button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(124, 92, 255, 0.4);
+    }
+
+    .upload-fixed button:active {
+      transform: translateY(0);
+    }
+
+    .file-input-container {
+      position: relative;
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .file-input-container input[type="file"] {
+      width: 100%;
+      height: 44px;
+      opacity: 0;
+      position: absolute;
+      cursor: pointer;
+    }
+
+    .file-input-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      border-radius: 12px;
+      color: var(--text-light);
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .file-input-label:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    #result {
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .success {
+      color: var(--success);
+    }
+
+    .error {
+      color: #ff4444;
+    }
+
+    .loading {
+      color: var(--primary);
+    }
+
+    /* Floating Action Button for Mobile */
+    .fab {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 8px 30px rgba(124, 92, 255, 0.4);
+      z-index: 1001;
+      transition: all 0.3s ease;
+      border: none;
+    }
+
+    .fab:hover {
+      transform: scale(1.1) rotate(90deg);
+    }
+
+    /* Loading State */
+    .loading-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(124, 92, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: var(--primary);
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-light);
+    }
+
+    .empty-state i {
+      font-size: 60px;
+      margin-bottom: 20px;
+      opacity: 0.5;
+    }
+
+    /* Responsive Design - Mobile Optimized */
+    @media (max-width: 1024px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        padding: 20px;
+      }
+      
+      .card-img-container {
+        max-height: 260px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 15px;
+        padding: 15px 4%;
+      }
+      
+      .card-img-container {
+        max-height: 220px;
+        aspect-ratio: 1/1;
+      }
+      
+      .card-content {
+        padding: 12px;
+      }
+      
+      .card-content h3 {
+        font-size: 15px;
+        margin-bottom: 6px;
+      }
+      
+      .card-content p {
+        font-size: 12px;
+        -webkit-line-clamp: 3;
+      }
+      
+      .upload-fixed {
+        padding: 12px;
+      }
+
+      .upload-fixed form {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .upload-fixed input,
+      .upload-fixed textarea,
+      .file-input-container,
+      .upload-fixed button {
+        width: 100%;
+      }
+
+      .fab {
+        bottom: 100px;
+        width: 56px;
+        height: 56px;
+        font-size: 22px;
+      }
+      
+      #modalImg {
+        max-height: 60vh; /* Even smaller modal on mobile */
+      }
+      
+      .modal-info {
+        bottom: -60px;
+      }
+      
+      .modal-info h3 {
+        font-size: 16px;
+      }
+      
+      .modal-info p {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 12px 3%;
+      }
+      
+      .card {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      
+      .card-img-container {
+        max-height: 200px;
+        aspect-ratio: 1/1;
+      }
+      
+      .navbar {
+        padding: 15px 4%;
+      }
+      
+      .logo-title h1 {
+        font-size: 18px;
+      }
+      
+      .main-title h1 {
+        font-size: 2rem;
+      }
+      
+      .main-title p {
+        font-size: 0.9rem;
+        padding: 0 15px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .card-img-container {
+        max-height: 180px;
+      }
+      
+      .gallery {
+        padding: 10px;
+        gap: 10px;
+      }
+    }
+
+    /* Dark mode adjustments */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --dark-bg: #121212;
+        --card-bg: #1e1e1e;
+      }
+    }
+
+    /* Accessibility */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Focus styles for accessibility */
+    :focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-title">
+      <img src="L.png" alt="Gallery Logo">
+      <h1>3nd Year(Sociology)</h1>
+    </div>
+    <ul>
+      <!-- Removed Upload button from navbar -->
+      <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+    </ul>
+  </nav>
+
+  <header class="main-title">
+    <h1>Our Journey Together</h1>
+    <p>Cherish every moment • Share your memories</p>
+  </header>
+
+  <div id="gallery_3.2" class="gallery">
+    <!-- Gallery will be loaded here -->
+    <div class="loading-container">
+      <div class="spinner"></div>
+      <p>Loading memories...</p>
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="imageModal">
+    <button id="closeModal" aria-label="Close modal">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="modal-content">
+      <img id="modalImg" src="" alt="Gallery image">
+      <div class="modal-info">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDescription"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upload Form -->
+  <div class="upload-fixed" id="upload">
+    <form id="uploadForm" onsubmit="submitForm(event)">
+      <input type="text" id="title" placeholder="Username/Rollno" required aria-label="Image title">
+      <textarea id="description" placeholder="Share the story..." required aria-label="Image description"></textarea>
+      
+      <div class="file-input-container">
+        <input type="file" id="fileInput" accept="image/*" required aria-label="Choose image">
+        <label for="fileInput" class="file-input-label">
+          <i class="fas fa-image"></i>
+          <span>Choose Image</span>
+        </label>
+      </div>
+      
+      <button type="submit">
+        <i class="fas fa-cloud-upload-alt"></i>
+        Upload Memory
+      </button>
+    </form>
+    <div id="result"></div>
+  </div>
+
+  <!-- Floating Action Button -->
+  <button class="fab" onclick="scrollToUpload()" aria-label="Upload new memory">
+    <i class="fas fa-plus"></i>
+  </button>
+
+  <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  addDoc,
+  query,
+  orderBy,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDOg2w2_0s0t213BbjWDt79vL-9O5ARqlQ",
+  authDomain: "lalhlimpuia-2c4db.firebaseapp.com",
+  projectId: "lalhlimpuia-2c4db",
+  storageBucket: "lalhlimpuia-2c4db.firebasestorage.app",
+  messagingSenderId: "302146269449",
+  appId: "1:302146269449:web:266243cd7da4496a8763d8"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+async function loadGallery() {
+  // Try to find the gallery container with different possible IDs
+  const galleryContainer = document.getElementById("gallery_3.2") || document.getElementById("gallery");
+  
+  if (!galleryContainer) {
+    console.error("Gallery container not found! Check if div with id='gallery_3.2' or id='gallery' exists.");
+    return;
+  }
+  
+  // Show loading state
+  galleryContainer.innerHTML = `
+    <div class="loading-container">
+      <div class="spinner"></div>
+      <p>Loading memories...</p>
+    </div>
+  `;
+
+  try {
+    console.log("Loading gallery from collection: gallery_3.2");
+    
+    const q = query(
+      collection(db, "gallery_3.2"),
+      orderBy("createdAt", "desc")
+    );
+
+    const snapshot = await getDocs(q);
+    
+    console.log("Snapshot received:", snapshot.size, "documents found");
+
+    if (snapshot.empty) {
+      console.log("No documents found in gallery_3.2 collection");
+      galleryContainer.innerHTML = `
+        <div class="empty-state">
+          <i class="fas fa-images"></i>
+          <h3>No memories yet</h3>
+          <p>Be the first to share a memory!</p>
+          <button onclick="addTestMemory()" style="margin-top: 20px; padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer;">
+            Add Test Memory
+          </button>
+        </div>
+      `;
+      return;
+    }
+
+    galleryContainer.innerHTML = '';
+    
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      console.log("Document data:", data);
+      const date = data.createdAt ? data.createdAt.toDate().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      }) : 'Recently';
+      
+      const card = document.createElement("div");
+      card.classList.add("card");
+      
+      card.innerHTML = `
+        <div class="card-img-container">
+          <img src="${data.imageUrl}" alt="${data.title}" loading="lazy">
+          <div class="card-overlay">
+            <div class="card-date">
+              <i class="far fa-clock"></i>
+              <span>${date}</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3>${data.title}</h3>
+          <p>${data.description}</p>
+        </div>
+      `;
+
+      card.addEventListener("click", () => openModal(data.imageUrl, data.title, data.description));
+      galleryContainer.appendChild(card);
+    });
+
+    console.log("Gallery loaded successfully");
+
+  } catch (error) {
+    console.error("Error loading gallery:", error);
+    galleryContainer.innerHTML = `
+      <div class="empty-state">
+        <i class="fas fa-exclamation-circle"></i>
+        <h3>Unable to load memories</h3>
+        <p>Error: ${error.message}</p>
+        <p>Please check your connection and try again</p>
+        <button onclick="loadGallery()" style="margin-top: 20px; padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer;">
+          Retry Loading
+        </button>
+      </div>
+    `;
+  }
+}
+
+// Test function to add a sample memory
+window.addTestMemory = async function() {
+  try {
+    console.log("Adding test memory...");
+    
+    // Add a test document to gallery_2
+    await addDoc(collection(db, "gallery_3.2"), {
+      title: "Welcome to 3nd Year!",
+      description: "This is a test memory. Upload your own memories!",
+      imageUrl: "https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      createdAt: serverTimestamp()
+    });
+    
+    console.log("Test memory added successfully!");
+    alert("Test memory added! Now reloading gallery...");
+    loadGallery();
+  } catch (error) {
+    console.error("Error adding test memory:", error);
+    alert("Failed to add test memory: " + error.message);
+  }
+};
+
+window.submitForm = async function (e) {
+  e.preventDefault();
+
+  const title = document.getElementById("title").value.trim();
+  const description = document.getElementById("description").value.trim();
+  const file = document.getElementById("fileInput").files[0];
+  const result = document.getElementById("result");
+  const submitBtn = document.querySelector('#uploadForm button[type="submit"]');
+
+  if (!file) {
+    showResult("Please select an image", "error");
+    return;
+  }
+
+  // Validate file size (max 5MB)
+  if (file.size > 5 * 1024 * 1024) {
+    showResult("Image must be less than 5MB", "error");
+    return;
+  }
+
+  // Show loading state
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Uploading...';
+  submitBtn.disabled = true;
+  showResult("Uploading your memory...", "loading");
+
+  try {
+    console.log("Starting Cloudinary upload...");
+    
+    // Upload to Cloudinary
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "hlimasailo3");
+    formData.append("folder", "3.2_year");
+    
+    const cloudRes = await fetch(
+      "https://api.cloudinary.com/v1_1/dedcto4oa/image/upload",
+      { method: "POST", body: formData }
+    );
+
+    const cloudData = await cloudRes.json();
+    console.log("Cloudinary response:", cloudData);
+
+    if (!cloudData.secure_url) {
+      throw new Error("Upload failed: " + JSON.stringify(cloudData));
+    }
+
+    console.log("Saving to Firebase collection: gallery_3.2");
+    
+    // Save to Firebase
+    await addDoc(collection(db, "gallery_3.2"), {
+      title,
+      description,
+      imageUrl: cloudData.secure_url,
+      createdAt: serverTimestamp()
+    });
+
+    console.log("Memory saved successfully!");
+    
+    // Show success
+    showResult("Memory uploaded successfully!", "success");
+    
+    // Reset form
+    document.getElementById("uploadForm").reset();
+    document.querySelector('.file-input-label span').textContent = 'Choose Image';
+    
+    // Refresh gallery
+    setTimeout(() => {
+      loadGallery();
+      scrollToTop();
+    }, 1000);
+
+  } catch (error) {
+    console.error("Upload error:", error);
+    showResult("Failed to upload: " + error.message, "error");
+  } finally {
+    // Reset button
+    submitBtn.innerHTML = '<i class="fas fa-cloud-upload-alt"></i> Upload Memory';
+    submitBtn.disabled = false;
+  }
+};
+
+function showResult(message, type) {
+  const result = document.getElementById("result");
+  result.textContent = message;
+  result.className = type;
+  result.style.display = "block";
+  
+  // Auto-hide after 5 seconds
+  if (type === "success" || type === "error") {
+    setTimeout(() => {
+      result.style.display = "none";
+    }, 5000);
+  }
+}
+
+function openModal(imgUrl, title, description) {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDescription = document.getElementById("modalDescription");
+  
+  modalImg.src = imgUrl;
+  modalTitle.textContent = title;
+  modalDescription.textContent = description;
+  
+  modal.classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  const modal = document.getElementById("imageModal");
+  modal.classList.remove("show");
+  document.body.style.overflow = "auto";
+}
+
+// Event listeners
+document.getElementById("closeModal").addEventListener("click", closeModal);
+
+document.getElementById("imageModal").addEventListener("click", (e) => {
+  if (e.target === document.getElementById("imageModal")) {
+    closeModal();
+  }
+});
+
+// Close modal with Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeModal();
+  }
+});
+
+// File input preview
+document.getElementById("fileInput").addEventListener("change", function(e) {
+  const label = document.querySelector('.file-input-label span');
+  if (this.files.length > 0) {
+    label.textContent = this.files[0].name.length > 20 
+      ? this.files[0].name.substring(0, 20) + '...' 
+      : this.files[0].name;
+  } else {
+    label.textContent = 'Choose Image';
+  }
+});
+
+// Scroll to upload section
+window.scrollToUpload = function() {
+  document.getElementById('upload').scrollIntoView({ 
+    behavior: 'smooth',
+    block: 'start'
+  });
+};
+
+// Scroll to top
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+  console.log("Page loaded, starting gallery load...");
+  loadGallery();
+  
+  // Add active class to current nav item
+  const currentPage = window.location.pathname.split('/').pop();
+  document.querySelectorAll('.navbar a').forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
+</body>
+</html>
